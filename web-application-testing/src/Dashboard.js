@@ -16,6 +16,12 @@
 import React, {useState} from 'react';
 import Display from './Display';
 
+export const increaseStat = value => {
+    return value + 1;
+}
+
+
+
 const Dashboard = (props) => {
 
     const [strikes, setStrikes] = useState(0);
@@ -33,16 +39,16 @@ const Dashboard = (props) => {
     return (
         <div className="main">
             <div className="boxed buttonContainer">
-                <button onClick={() => setStrikes(strikes + 1)}>
+                <button onClick={() => setStrikes(increaseStat(strikes))}>
                     Strike
                 </button>
-                <button onClick={() => setBalls(balls + 1)}>
+                <button onClick={() => setBalls(increaseStat(balls))}>
                     Ball
                 </button>
-                <button onClick={() => setFouls(fouls + 1)}>
+                <button onClick={() => setFouls(increaseStat(fouls))}>
                     Foul
                 </button>
-                <button onClick={() => setHits(hits + 1)}>
+                <button onClick={() => setHits(increaseStat(hits))}>
                     Hit
                 </button>
                 <button onClick={() => resetAll()}>
