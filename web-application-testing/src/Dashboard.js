@@ -23,6 +23,13 @@ const Dashboard = (props) => {
     const [fouls, setFouls] = useState(0);
     const [hits, setHits] = useState(0);
 
+    const resetAll = () => {
+        setStrikes(0);
+        setBalls(0);
+        setFouls(0);
+        setHits(0);
+    }
+
     return (
         <div className="main">
             <div className="boxed buttonContainer">
@@ -37,6 +44,9 @@ const Dashboard = (props) => {
                 </button>
                 <button onClick={() => setHits(hits + 1)}>
                     Hit
+                </button>
+                <button onClick={() => resetAll()}>
+                    New Batter
                 </button>
             </div>
             <Display strikes={strikes} balls={balls} fouls={fouls} hits={hits}/>
