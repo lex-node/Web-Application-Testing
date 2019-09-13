@@ -13,24 +13,35 @@
 - there is **NO** need to specify the type of hit (single, double, etc).
 - changes recorded on this component should update the information shown by the `Display` component.
 */
-import React from 'react';
+import React, {useState} from 'react';
+import Display from './Display';
 
-const Dashboard = props => {
+const Dashboard = (props) => {
+
+    const [strikes, setStrikes] = useState(0);
+    const [balls, setBalls] = useState(0);
+    const [fouls, setFouls] = useState(0);
+    const [hits, setHits] = useState(0);
+
     return (
-        <div>
-            <button>
-                Strike
-            </button>
-            <button>
-                Ball
-            </button>
-            <button>
-                Foul
-            </button>
-            <button>
-                Hit
-            </button>
+        <div className="main">
+            <div className="boxed buttonContainer">
+                <button onClick={() => setStrikes(strikes + 1)}>
+                    Strike
+                </button>
+                <button onClick={() => setBalls(balls + 1)}>
+                    Ball
+                </button>
+                <button onClick={() => setFouls(fouls + 1)}>
+                    Foul
+                </button>
+                <button onClick={() => setHits(hits + 1)}>
+                    Hit
+                </button>
+            </div>
+            <Display strikes={strikes} balls={balls} fouls={fouls} hits={hits}/>
         </div>
+
     )
 }
 

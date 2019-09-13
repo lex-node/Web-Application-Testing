@@ -12,3 +12,20 @@
 
 - display the count of `balls` and `strikes` for the at-bat.
 - should be updated when the user records activity on the `Dashboard` component.*/
+
+import React from 'react';
+
+const Display = props => {
+    return (
+        <div className="boxed displayContainer">
+            <h2>At-Bat Player Stats</h2>
+            <p>Strikes: {props.strikes}</p>
+            <p>Balls: {props.balls}</p>
+            <p>Fouls:{props.fouls} </p>
+            <p>Hits: {props.hits}</p>
+        </div>
+
+    )
+}
+
+export default Display;
