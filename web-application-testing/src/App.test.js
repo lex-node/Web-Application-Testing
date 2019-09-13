@@ -6,22 +6,22 @@ import * as rtl from '@testing-library/react';
 import '@testing-library/jest-dom/extend-expect';
 
 it('renders without crashing', () => {
-  const div = document.createElement('div');
-  ReactDOM.render(<App />, div);
-  ReactDOM.unmountComponentAtNode(div);
+    const div = document.createElement('div');
+    ReactDOM.render(<App/>, div);
+    ReactDOM.unmountComponentAtNode(div);
 });
 
 it("displays strikes, balls, fouls and hits", () => {
-  const wrapper = rtl.render(<App/>)
+    const wrapper = rtl.render(<App/>)
 
-  expect(wrapper.getByText(/Strikes/i));
-  expect(wrapper.getByText(/Balls/i));
-  expect(wrapper.getByText(/Hits/i));
-  expect(wrapper.getByText(/Fouls/i));
+    expect(wrapper.getByText(/Strikes/i));
+    expect(wrapper.getByText(/Balls/i));
+    expect(wrapper.getByText(/Hits/i));
+    expect(wrapper.getByText(/Fouls/i));
 });
 
 it("increments stats by 1", () => {
-  expect(increaseStat(0)).toBe(1);
-  expect(increaseStat(1)).toBe(2);
+    expect(increaseStat(0)).toBe(1);
+    expect(increaseStat(1)).toBe(2);
 });
 

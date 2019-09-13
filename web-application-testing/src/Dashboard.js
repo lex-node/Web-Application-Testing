@@ -21,7 +21,6 @@ export const increaseStat = value => {
 }
 
 
-
 const Dashboard = (props) => {
 
     const [strikes, setStrikes] = useState(0);
